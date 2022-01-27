@@ -11,7 +11,7 @@ export class CardComponent implements OnInit {
   dog: Animals;
   tiger: Animals;
   cat: Animals;
-  numberOfAnimals: any;
+  numberOfAnimals: AnimalsList;
 
   constructor() { 
     this.dog = {
