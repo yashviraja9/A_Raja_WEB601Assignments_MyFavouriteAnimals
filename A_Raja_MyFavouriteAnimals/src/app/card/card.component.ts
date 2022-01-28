@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Animals } from 'src/app/helper-files/content-interface';
-import { AnimalsList } from 'src/app/helper-files/content-list';
+import { Animals } from '../helper-files/content-interface';
+import { AnimalsList } from '../helper-files/content-list';
 
 @Component({
   selector: 'app-card',
