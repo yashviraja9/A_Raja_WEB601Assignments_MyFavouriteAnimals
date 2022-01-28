@@ -34,9 +34,9 @@ export class AnimalsList {
         return `<div>
                 <h1>Title: ${this.animals[id].title}</h1></br>
                 <p><b>Description:</b> ${this.animals[id].description}</p></br>
-                <p>Creator: ${this.animals[id].creator}</p></br>
+                <p><b>Creator:</b> ${this.animals[id].creator}</p></br>
                 <img src="${this.animals[id].imgURL}" width="500" height="350"/>
-                <p>Type: ${this.animals[id].type}</p></br>
+                <p><b>Type:</b> ${this.animals[id].type}</p></br>
             </div>`;
     }
 }
