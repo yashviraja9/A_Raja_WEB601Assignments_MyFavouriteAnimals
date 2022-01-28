@@ -1,5 +1,5 @@
 //import { ReturnStatement } from '@angular/compiler';
-import { Animals } from 'src/app/helper-files/content-interface';
+import { Animals } from '../helper-files/content-interface';
 
 export class AnimalsList {
     // static animalCount = 0;
