@@ -1,5 +1,10 @@
 # ARajaMyFavouriteAnimals
 
+Yashvi Brijmohan Raja - 0766432
+
+I choose My Favourite Animals theme for this assignment.
+My favourites animals are tiger, cat, dog. 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
 
 ## Development server
