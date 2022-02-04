@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Animals } from '../helper-files/content-interface';
-import { AnimalsList } from '../helper-files/content-list';
 
 @Component({
   selector: 'app-card',
@@ -11,7 +10,6 @@ export class CardComponent implements OnInit {
   dog: Animals;
   tiger: Animals;
   cat: Animals;
-  numberOfAnimals: AnimalsList;
 
   constructor() { 
     this.dog = {
@@ -40,11 +38,7 @@ export class CardComponent implements OnInit {
       imgURL: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-cat-wearing-sunglasses-while-sitting-royalty-free-image-1571755145.jpg",
       type: "Mammalia"
     };
-
-    this.numberOfAnimals = new AnimalsList();
-    this.numberOfAnimals.addAnimals(this.dog);
-    this.numberOfAnimals.addAnimals(this.tiger);
-    this.numberOfAnimals.addAnimals(this.cat);
+    
   }
 
   ngOnInit(): void {
