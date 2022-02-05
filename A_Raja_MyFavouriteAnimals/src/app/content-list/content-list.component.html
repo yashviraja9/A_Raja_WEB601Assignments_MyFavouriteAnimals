@@ -1,1 +1,10 @@
-<p>content-list works!</p>
+<!-- <<p>content-list works!</p> -->
+<h1>My Favourite Animals</h1>
+
+<div *ngFor="let item of arrayOfAnimals; let last = last" class="animal card" [class.last-item]="last"> 
+    <h1>{{ item ? item.title : "" }}</h1>
+    <b>Description:</b>  {{ item ? item.description : "" }}
+    <br><br><b>Creator:</b>  {{ item ? item.creator : "" }} 
+    <br><br><b>Type:</b>  {{ item ? item.type : "" }} 
+    <br><br> <img [src]="item ? item.imgURL : '' "  class = "img" (click)="displayAnimals(item)">
+</div>

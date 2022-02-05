@@ -16,7 +16,7 @@ export class ContentListComponent implements OnInit {
       {
         id: 1,
         title: "Dog",
-        description: "Dogs are domesticated mammals, not natural wild animals. They were originally bred from wolves. </br> They have been bred by humans for a long time, and were the first animals ever to be domesticated.",
+        description: "Dogs are domesticated mammals, not natural wild animals. They were originally bred from wolves. They have been bred by humans for a long time, and were the first animals ever to be domesticated.",
         creator: "God",
         imgURL: "https://i.guim.co.uk/img/media/fe1e34da640c5c56ed16f76ce6f994fa9343d09d/0_174_3408_2046/master/3408.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=0d3f33fb6aa6e0154b7713a00454c83d",
         type: "mammals"
@@ -24,7 +24,7 @@ export class ContentListComponent implements OnInit {
       {
         id: 2,
         title: "Tiger",
-        description: "The tiger is the largest living cat species and a member of the genus Panthera. </br> It is most recognisable for its dark vertical stripes on orange fur with a white underside.",
+        description: "The tiger is the largest living cat species and a member of the genus Panthera. It is most recognisable for its dark vertical stripes on orange fur with a white underside.",
         creator: "God",
         imgURL: "https://cdn.britannica.com/40/75640-050-F894DD85/tiger-Siberian.jpg",
         type: "Mammalia"
@@ -32,17 +32,40 @@ export class ContentListComponent implements OnInit {
       {
         id: 3,
         title: "Cat",
-        description: "A cat is a furry animal that has a long tail and sharp claws. </br> Cats are often kept as pets. Cats are lions, tigers, and other wild animals in the same family.",
+        description: "A cat is a furry animal that has a long tail and sharp claws. sCats are often kept as pets. Cats are lions, tigers, and other wild animals in the same family.",
         creator: "God",
         imgURL: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-cat-wearing-sunglasses-while-sitting-royalty-free-image-1571755145.jpg",
         type: "Mammalia"
+      },
+      {
+        id: 4,
+        title: "Elephant",
+        description: "Elephants are the largest existing land animals. Three living species are currently recognised: the African bush elephant, the African forest elephant, and the Asian elephant.",
+        creator: "God",
+        imgURL: "https://thumbs.dreamstime.com/b/african-elephant-isolated-large-white-background-91136393.jpg",
+        type: "Mammalia"
+      },
+      {
+        id: 5,
+        title: "Monkey",
+        description: "Monkey is a common name that may refer to most mammals of the infraorder Simiiformes, also known as the simians.",
+        creator: "God",
+        imgURL: "https://images.unsplash.com/flagged/photo-1566127992631-137a642a90f4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80",
+        type: "Mammalia"
+      },
+      {
+        id: 6,
+        title: "Horse",
+        description: "The horse is a domesticated, one-toed, hoofed mammal. It belongs to the taxonomic family Equidae and is one of two extant subspecies of Equus ferus.",
+        creator: "God",
+        imgURL: "https://cdn.britannica.com/96/1296-050-4A65097D/gelding-bay-coat.jpg",
+        type: "Mammal"
       }
     ];
   }
 
-  displayAnimals(animal:any) {
-
-    console.log("Animal Id: " + animal.id + "Title: " + animal.title );
+  displayAnimals(animal:Animals) {
+    console.log("Animal Id: " + animal.id + "\nTitle: " + animal.title );
   }
 
   ngOnInit(): void {
