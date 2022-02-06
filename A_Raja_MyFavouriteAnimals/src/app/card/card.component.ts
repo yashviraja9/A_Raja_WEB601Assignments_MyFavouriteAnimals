@@ -7,9 +7,6 @@ import { Animals } from '../helper-files/content-interface';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  // dog: Animals;
-  // tiger: Animals;
-  // cat: Animals;
 
   @Input() animals?: Animals;
   
