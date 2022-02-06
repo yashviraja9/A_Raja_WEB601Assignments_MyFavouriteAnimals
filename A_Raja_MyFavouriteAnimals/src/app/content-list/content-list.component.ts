@@ -64,10 +64,6 @@ export class ContentListComponent implements OnInit {
     ];
   }
 
-  displayAnimals(animal:Animals) {
-    console.log("Animal Id: " + animal.id + "\nTitle: " + animal.title );
-  }
-
   ngOnInit(): void {
   }
 

@@ -1,0 +1,20 @@
+:host {
+ 
+    display: block;
+    border: 1px solid brown;
+    margin-right: 40px;
+    padding-left: 30px;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 50%;
+    
+    .img {
+        width: 450px;
+        height: 300px;
+        margin-top: 10px;
+    }
+}
+
+:host.is-first{
+    border: black solid 2px;
+}
