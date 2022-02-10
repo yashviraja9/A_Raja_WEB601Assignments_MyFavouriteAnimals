@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Input, OnInit } from '@angular/core';
 import { Animals } from '../helper-files/content-interface';
 
 @Component({
@@ -19,7 +19,7 @@ export class ContentListComponent implements OnInit {
         description: "Dogs are domesticated mammals, not natural wild animals. They were originally bred from wolves. They have been bred by humans for a long time, and were the first animals ever to be domesticated.",
         creator: "God",
         imgURL: "https://i.guim.co.uk/img/media/fe1e34da640c5c56ed16f76ce6f994fa9343d09d/0_174_3408_2046/master/3408.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=0d3f33fb6aa6e0154b7713a00454c83d",
-        type: "Mammals"
+        type: "Mammal"
       },
       {
         id: 2,
@@ -35,7 +35,6 @@ export class ContentListComponent implements OnInit {
         description: "A cat is a furry animal that has a long tail and sharp claws. sCats are often kept as pets. Cats are lions, tigers, and other wild animals in the same family.",
         creator: "God",
         imgURL: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/close-up-of-cat-wearing-sunglasses-while-sitting-royalty-free-image-1571755145.jpg",
-        type: "Mammalia"
       },
       {
         id: 4,
@@ -43,7 +42,6 @@ export class ContentListComponent implements OnInit {
         description: "Elephants are the largest existing land animals. Three living species are currently recognised: the African bush elephant, the African forest elephant, and the Asian elephant.",
         creator: "God",
         imgURL: "https://thumbs.dreamstime.com/b/african-elephant-isolated-large-white-background-91136393.jpg",
-        type: "Mammalia"
       },
       {
         id: 5,
@@ -60,6 +58,14 @@ export class ContentListComponent implements OnInit {
         creator: "God",
         imgURL: "https://cdn.britannica.com/96/1296-050-4A65097D/gelding-bay-coat.jpg",
         type: "Mammal"
+      },
+      {
+        id: 7,
+        title: "Parrot",
+        description: "The parrot is a very fascinating bird. It comprises a strong curved bill with an upright stance along with strong legs and clawed zygodactyl feet.",
+        creator: "God",
+        imgURL: "https://images.unsplash.com/photo-1618281377501-88c2328cbb9a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fHJvYnxlbnwwfHwwfHw%3D&w=1000&q=80",
+        type: "Bird"
       }
     ];
   }
@@ -67,4 +73,22 @@ export class ContentListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  text?:string;
+  colour?: string;  
+
+  input_filter(animal:string):any {
+    
+    for(let i = 0; i < this.arrayOfAnimals.length; i++) {
+      
+      if (animal == this.arrayOfAnimals[i].title) {
+        this.text = 'Animal exsit !';
+        this.colour = "green";
+        return [this.text, this.colour];
+      } 
+      else  {
+        this.text = 'Animal does not exist !';
+        this.colour = "red";
+      }      
+    }
+  }
 }

@@ -9,5 +9,18 @@
     <br><br> <img [src]="item ? item.imgURL : '' "  class = "img" (click)="displayAnimals(item)">
 </div> -->
 
-<app-card *ngFor=" let item of arrayOfAnimals; index as i; first as isFirst" [animals]="item" [class.is-first]="isFirst" ></app-card>
+<!-- <app-card *ngFor=" let item of arrayOfAnimals; index as i; first as isFirst" [animals]="item" [class.is-first]="isFirst" ></app-card> -->
 
+<!-- Assignment 3 Work -->
+<!-- <input placeholder="Enter a title" #input/><button (click) = "input_filter(input.value)">Submit</button>
+<div [(ngModel)]="colour"><p [style.color]="colour">{{ text }}</p></div> -->
+
+<!-- <div *ngFor="let item of (arrayOfAnimals | filterTypePipe); let first = first" class="animal card" [class.first-item]="first" [ngClass] = "{'Mammal' : item.type == 'Mammal', 'Mammalia' : item.type == 'Mammalia', 'Bird' : item.type == 'Bird'}"> 
+
+    <h1>{{ item ? item.title : "" }}</h1>
+    Description: {{ item ? item.description : "" }} <br><br>
+    Creator:  {{ item ? item.creator : "" }} <br><br>
+    Type:  {{ item ? item.type : "" }} <br><br> 
+    <img [src]="item ? item.imgURL : ''" width="300"> <br><br>
+
+</div> -->

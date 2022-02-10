@@ -11,7 +11,7 @@ export class CardComponent implements OnInit {
   @Input() animals?: Animals;
   
   constructor() { 
-
+    this.animals = { id: 0, title: '', description: '', creator : '', imgURL: '' };
   }
 
   displayAnimals() {
