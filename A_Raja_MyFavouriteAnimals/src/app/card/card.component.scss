@@ -1,20 +1,28 @@
 :host {
- 
     display: block;
-    border: 1px solid brown;
-    margin-right: 40px;
-    padding-left: 30px;
-    padding-right: 10px;
-    margin-top: 20px;
-    margin-left: 20px;
+    margin: 16px auto;
+    padding: 8px;
+    width: 500px;
+    text-align: center;
     
     .img {
         width: 300px;
         height: 300px;
-        margin-top: 10px;
     }
 }
 
-:host.is-first{
-    border: black solid 2px;
+:host.typeOne {
+    color: rgb(243, 85, 85);
+    border: 3px solid red;
+
+}
+
+:host.typeTwo {
+    color:dodgerblue ;
+    border: 3px solid dodgerblue;
+}
+
+:host.typeThree {
+    color:  green;
+    border: 3px solid green;
 }

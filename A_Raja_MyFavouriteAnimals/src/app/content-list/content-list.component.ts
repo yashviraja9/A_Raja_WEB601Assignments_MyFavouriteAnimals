@@ -74,20 +74,19 @@ export class ContentListComponent implements OnInit {
   }
 
   text?:string;
-  colour?: string;  
 
-  input_filter(animal:string):any {
+  searchAnimalName(animalName:string):any {
     
-    for(let i = 0; i < this.arrayOfAnimals.length; i++) {
-      
-      if (animal == this.arrayOfAnimals[i].title) {
-        this.text = 'Animal exsit !';
-        this.colour = "green";
-        return [this.text, this.colour];
+    for(let i = 0; i < this.arrayOfAnimals.length; i++) 
+    {
+      if (animalName.toLocaleLowerCase() == this.arrayOfAnimals[i].title.toLocaleLowerCase()) {
+        this.text = 'Animal exist in the list !';
+        console.log('exist');
+        return [this.text];
       } 
       else  {
-        this.text = 'Animal does not exist !';
-        this.colour = "red";
+        this.text = 'Animal does not exist in the list !';
+        console.log('Does not exist');
       }      
     }
   }

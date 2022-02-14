@@ -1,16 +1,17 @@
-<!-- <<p>content-list works!</p> -->
-<h1>My Favourite Animals</h1>
-
 <!-- Assignment 3 Work -->
-<!-- <input placeholder="Enter a title" #input/><button (click) = "input_filter(input.value)">Submit</button>
-<div [(ngModel)]="colour"><p [style.color]="colour">{{ text }}</p></div> -->
 
-<!-- <div *ngFor="let item of (arrayOfAnimals | filterTypePipe); let first = first" class="animal card" [class.first-item]="first" [ngClass] = "{'Mammal' : item.type == 'Mammal', 'Mammalia' : item.type == 'Mammalia', 'Bird' : item.type == 'Bird'}"> 
+<div class="input">
+    <h1>Enter Animal Name </h1><input #animalName>
+    <button (click)="searchAnimalName(animalName.value)">Search</button>
+    <p *ngIf="text == 'Animal exist in the list !'" class="flag">{{ text }}</p>
+    <p *ngIf="text == 'Animal does not exist in the list !'" class="noFlag">{{ text }}</p>
+</div>
 
-    <h1>{{ item ? item.title : "" }}</h1>
-    Description: {{ item ? item.description : "" }} <br><br>
-    Creator:  {{ item ? item.creator : "" }} <br><br>
-    Type:  {{ item ? item.type : "" }} <br><br> 
-    <img [src]="item ? item.imgURL : ''" width="300"> <br><br>
+<h1>Animals from Mammal type :</h1>
+<app-card *ngFor=' let item of arrayOfAnimals | filterTypePipe : "Mammal"; index as i; first as isFirst' [animals]=item [class.is-first]="isFirst" class="typeOne"></app-card><br><br>
 
-</div> -->
+<h1>Animals from Bird type :</h1>
+<app-card *ngFor=' let item of arrayOfAnimals | filterTypePipe : "Bird"; index as i; first as isFirst' [animals]=item [class.is-first]="isFirst" class="typeTwo"></app-card><br><br>
+
+<h1>Animals from no type value assign :</h1>
+<app-card *ngFor=' let item of arrayOfAnimals | filterTypePipe ; index as i; first as isFirst' [animals]=item [class.is-first]="isFirst" class="typeThree"></app-card>

@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+// import { type } from 'os';
 import { Animals } from './helper-files/content-interface';
 
 @Pipe({
@@ -6,8 +7,10 @@ import { Animals } from './helper-files/content-interface';
 })
 export class FilterTypePipePipe implements PipeTransform {
 
-  transform(arrayOfAnimals: Animals[]): Animals {
-    return arrayOfAnimals.filter(item => item.type == null ? item.type == '' : item.type == "Mammal");
+  transform(arrayOfAnimals: Animals[], aType?:string) {
+    
+    return arrayOfAnimals.filter(animal => animal.type == aType);
   }
 
+  
 }

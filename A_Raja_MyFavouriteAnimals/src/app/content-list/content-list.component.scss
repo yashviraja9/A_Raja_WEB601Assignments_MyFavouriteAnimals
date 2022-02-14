@@ -1,27 +1,18 @@
 :host {
-    .animal {
-        border: 1px solid black;
-        margin: 20px;
-        padding: 10px;
-    }
-    
-    .first-item {
-        border: 2px solid black;
+    .flag {
+        color: green;
+        font-size: 18px;
     }
 
-    .Mammal {
+    .noFlag {
         color: red;
+        font-size: 18px;
     }
 
-    .Bird {
-        color: #385CFF;
-    }
-
-    .Mammalia {
-        color: yellow;
-    }
-
-    input {
-        margin-right: 20px;
+    .input, h1 {
+        margin: 16px auto;
+        padding: 8px;
+        text-align: center;
+        color:darkmagenta ;
     }
 }
