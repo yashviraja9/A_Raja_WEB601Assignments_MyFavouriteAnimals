@@ -1,8 +1,15 @@
 <!-- Assignment 3 Work -->
 <div>
-    <h1 class="title"> Title:  {{ animals? animals.title: "" }}  </h1>
-    <div class="description"> <b>Description: </b>  {{ animals? animals.description:"" }} </div> <br>
-    <div class="creator"> <b>Creater:</b>  {{ animals? animals.creator:"" }}</div> <br>
-    <div class="type" *ngIf="animals? animals.type  :''"> <b>Type:</b>  {{ animals?  animals.type :"" }} </div> <br>
-    <div><img class="img" *ngIf="animals? animals.imgURL  :''"  [src]='animals? animals.imgURL  :""' (click)="displayAnimals()"/></div>
+<!-- <div appHoverAffect eVal="card"> -->
+    <h1 class="title"> Title :  {{ animals?.title }}  </h1>
+    <div class="description"> <b>Description : </b>  {{ animals?.description }} </div> <br>
+    <div class="creator"> <b>Creater :</b>  {{ animals?.creator }}</div> <br>
+    <div class="type" *ngIf=" animals?.type " appHoverAffect eVal="type"> <b>Type :</b>  {{ animals?.type }} </div><br>
+    <div class="tags" *ngIf="animals?.tags">
+        <span class="tags" appHoverAffect class="tag" *ngFor="let tag of animals?.tags">#{{ tag }}</span>
+    </div><br>
+    <div [ngSwitch] = 'animals?.imgURL'>
+        <span *ngSwitchCase="null"><img class="img" src="https://m.media-amazon.com/images/I/71Qb6yqg1ML._AC_SX679_.jpg"></span>
+        <span *ngSwitchDefault><img class="img" *ngIf="animals?.imgURL"  [src]='animals?.imgURL' /></span>
+    </div><br>
 </div>
