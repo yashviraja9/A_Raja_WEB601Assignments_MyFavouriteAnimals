@@ -14,7 +14,11 @@ export class HoverAffectDirective {
   @HostListener("mouseover") onMouseOver() {
     if(this.eVal == "type"){
       this.elm.nativeElement.style.textDecoration = "underline";
-    }else if(this.eVal == "eOne"){
+    }
+    else if(this.elm.nativeElement.classList.contains('first-item')){
+      this.elm.nativeElement.style.border = "4px solid black";
+    }
+    else if(this.elm.nativeElement.classList.contains('last-item')){
       this.elm.nativeElement.style.border = "4px solid black";
     }
      else {
