@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+// import { ContentListComponent } from './content-list/content-list.component';
+// import { Animals } from 'src/app/helper-files/content-interface';
 
 @Component({
   selector: 'app-root',

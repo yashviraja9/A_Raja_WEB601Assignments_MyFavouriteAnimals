@@ -1,0 +1,17 @@
+<!-- Assignment 3 Work -->
+
+<div class="input">
+    <h1>Enter Animal Name </h1><input #animalName>
+    <button (click)="searchAnimalName(animalName.value)">Search</button>
+    <p *ngIf="text == 'Animal exist in the list !'" class="flag">{{ text }}</p>
+    <p *ngIf="text == 'Animal does not exist in the list !'" class="noFlag">{{ text }}</p>
+</div>
+
+<h1>Animals from Mammal type :</h1>
+<app-card *ngFor=' let item of arrayOfAnimals | filterTypePipe : "Mammal"; index as i; first as isFirst; let last as isLast' [animals]=item [class.first-item]="isFirst" [class.last-item]="last" class="typeOne" appHoverAffect></app-card><br><br>
+
+<h1>Animals from Bird type :</h1>
+<app-card *ngFor=' let item of arrayOfAnimals | filterTypePipe : "Bird"; index as i; first as isFirst; let last as isLast' [animals]=item [class.is-first]="isFirst" [class.last-item]="last" class="typeTwo" appHoverAffect></app-card><br><br>
+
+<h1>Animals from no type value assign :</h1>
+<app-card *ngFor=' let item of arrayOfAnimals | filterTypePipe ; index as i; first as isFirst; let last as isLast' [animals]=item [class.is-first]="isFirst" [class.last-item]="last" class="typeThree" appHoverAffect></app-card>
