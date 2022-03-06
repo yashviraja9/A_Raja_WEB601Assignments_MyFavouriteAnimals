@@ -95,4 +95,10 @@ export class ContentListComponent implements OnInit {
       }      
     }
   }
+
+  addAnimalToList(newAnimalFromChild: Animals) {
+    console.log("Old array Values: ", this.arrayOfAnimals);
+    this.arrayOfAnimals.push(newAnimalFromChild);
+    this.arrayOfAnimals = [...this.arrayOfAnimals];
+  }
 }

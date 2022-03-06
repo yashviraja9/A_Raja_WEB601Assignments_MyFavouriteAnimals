@@ -1,4 +1,6 @@
-<!-- Assignment 3 Work -->
+<app-create-content (newAnimalEvent)="addAnimalToList($event)"></app-create-content>
+<p *ngIf="text == ''" class="flag">{{ text }}</p>
+<p *ngIf="text == ''" class="noFlag">{{ text }}</p>
 
 <div class="input">
     <h1>Enter Animal Name </h1><input #animalName>
@@ -7,11 +9,14 @@
     <p *ngIf="text == 'Animal does not exist in the list !'" class="noFlag">{{ text }}</p>
 </div>
 
+<h1>All Types of Animals</h1>
+<app-card *ngFor=' let item of arrayOfAnimals; index as i; first as isFirst; let last as isLast' [animals]=item [class.first-item]="isFirst" [class.last-item]="last" class="typeAll" appHoverAffect></app-card><br><br>
+
 <h1>Animals from Mammal type :</h1>
 <app-card *ngFor=' let item of arrayOfAnimals | filterTypePipe : "Mammal"; index as i; first as isFirst; let last as isLast' [animals]=item [class.first-item]="isFirst" [class.last-item]="last" class="typeOne" appHoverAffect></app-card><br><br>
 
 <h1>Animals from Bird type :</h1>
 <app-card *ngFor=' let item of arrayOfAnimals | filterTypePipe : "Bird"; index as i; first as isFirst; let last as isLast' [animals]=item [class.is-first]="isFirst" [class.last-item]="last" class="typeTwo" appHoverAffect></app-card><br><br>
 
-<h1>Animals from no type value assign :</h1>
-<app-card *ngFor=' let item of arrayOfAnimals | filterTypePipe ; index as i; first as isFirst; let last as isLast' [animals]=item [class.is-first]="isFirst" [class.last-item]="last" class="typeThree" appHoverAffect></app-card>
+<h1>Animals from Mammalia type value assign :</h1>
+<app-card *ngFor=' let item of arrayOfAnimals | filterTypePipe : "Mammalia" ; index as i; first as isFirst; let last as isLast' [animals]=item [class.is-first]="isFirst" [class.last-item]="last" class="typeThree" appHoverAffect></app-card>

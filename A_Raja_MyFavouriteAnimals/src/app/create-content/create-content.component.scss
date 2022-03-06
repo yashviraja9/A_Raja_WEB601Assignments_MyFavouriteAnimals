@@ -1,0 +1,25 @@
+:host {
+    display: block;
+    margin: 16px auto;
+    padding: 8px;
+    width: 500px;
+    text-align: center;
+    border: 1px solid black;
+
+    .flag {
+        color: red;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .input, h1 {
+        margin: 16px auto;
+        padding: 8px;
+        text-align: center;
+        color:darkmagenta;
+    }
+    #button{
+        background-color: cornsilk;
+        height: 30px;
+    }
+}
