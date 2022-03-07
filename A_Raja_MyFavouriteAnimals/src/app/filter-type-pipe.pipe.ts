@@ -7,9 +7,15 @@ import { Animals } from './helper-files/content-interface';
 })
 export class FilterTypePipePipe implements PipeTransform {
 
-  transform(arrayOfAnimals: Animals[], aType?:string) {
+  transform(arrayOfAnimals: Animals[], aType?:string) : Animals[] {
     
-    return arrayOfAnimals.filter(animal => animal.type == aType);
+    return arrayOfAnimals.filter(animal => {
+      if(aType) { 
+        return animal.type == aType;
+      } else {
+        return !animal.type;
+      }
+    });
   }
 
   

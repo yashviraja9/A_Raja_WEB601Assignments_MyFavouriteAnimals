@@ -1,6 +1,4 @@
 <app-create-content (newAnimalEvent)="addAnimalToList($event)"></app-create-content>
-<p *ngIf="text == ''" class="flag">{{ text }}</p>
-<p *ngIf="text == ''" class="noFlag">{{ text }}</p>
 
 <div class="input">
     <h1>Enter Animal Name </h1><input #animalName>
@@ -18,5 +16,5 @@
 <h1>Animals from Bird type :</h1>
 <app-card *ngFor=' let item of arrayOfAnimals | filterTypePipe : "Bird"; index as i; first as isFirst; let last as isLast' [animals]=item [class.is-first]="isFirst" [class.last-item]="last" class="typeTwo" appHoverAffect></app-card><br><br>
 
-<h1>Animals from Mammalia type value assign :</h1>
-<app-card *ngFor=' let item of arrayOfAnimals | filterTypePipe : "Mammalia" ; index as i; first as isFirst; let last as isLast' [animals]=item [class.is-first]="isFirst" [class.last-item]="last" class="typeThree" appHoverAffect></app-card>
+<h1>Animals from No type value assign :</h1>
+<app-card *ngFor=' let item of arrayOfAnimals | filterTypePipe ; index as i; first as isFirst; let last as isLast' [animals]=item [class.is-first]="isFirst" [class.last-item]="last" class="typeThree" appHoverAffect></app-card>

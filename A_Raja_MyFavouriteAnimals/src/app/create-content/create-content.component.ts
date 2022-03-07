@@ -37,7 +37,7 @@ export class CreateContentComponent implements OnInit {
       tags: tags.split(",")
     };
 
-    if(this.newAnimal != null && this.newAnimal.id.toString() != '' && this.newAnimal.title != '' && this.newAnimal.description != '' && this.newAnimal.creator != '' && this.newAnimal.type != '') {
+    if(this.newAnimal != null && this.newAnimal.id.toString() != '' && this.newAnimal.title != '' && this.newAnimal.description != '' && this.newAnimal.creator != '') {
       this.newAnimalEvent.emit(this.newAnimal);
       this.testPass = true;
     } else {
