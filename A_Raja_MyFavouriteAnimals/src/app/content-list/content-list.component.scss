@@ -10,9 +10,15 @@
     }
 
     .input, h1 {
-        margin: 16px auto;
+        margin: 5px auto;
         padding: 8px;
         text-align: center;
         color:darkmagenta ;
+    }
+
+    .button {
+        margin: 10px;
+        background-color: bisque;
+        padding: 3px 15px;
     }
 }

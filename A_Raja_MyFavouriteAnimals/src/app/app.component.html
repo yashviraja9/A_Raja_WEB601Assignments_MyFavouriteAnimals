@@ -1,1 +1,8 @@
+<input placeholder="Enter Id Here" #id>
+<button (click)="functionCall(id.value)" class="button">Find</button>
+
+<app-card class="animal" [animals]="getOneAnimal"></app-card>
+
+<app-app-messages class="message"></app-app-messages>
+
 <app-content-list></app-content-list>

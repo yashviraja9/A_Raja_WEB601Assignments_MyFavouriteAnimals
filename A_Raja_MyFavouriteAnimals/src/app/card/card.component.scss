@@ -34,3 +34,12 @@
     color:  green;
     border: 3px solid green;
 }
+
+:host.animal{
+    border: 1px solid black;
+    box-shadow: rgb(82, 76, 70) 10px 0px 15px;
+    margin: 16px auto;
+    padding: 20px;
+    width: 450px;
+    height: 600px;
+}
