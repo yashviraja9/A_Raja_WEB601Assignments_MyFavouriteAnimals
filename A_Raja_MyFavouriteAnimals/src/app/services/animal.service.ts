@@ -25,20 +25,20 @@ export class AnimalService {
     const message = ARRAYOFANIMALS[id];
 
     if(id < ARRAYOFANIMALS.length ) {
-
+      this.messageService.clear();
       console.log("Success !",ARRAYOFANIMALS);
       this.messageService.add("Content array loaded!");
       this.messageService.add('Content item at Id : ' + (message.id - 1));
 
     } else {
       console.log("Failed !");
-      // this.messageService.add('Animal is not available at Id :' + (message.id - 1));
       this.DisplayError();
     }
     return of(ARRAYOFANIMALS[id]);
   }
 
   DisplayError() : void{
+    this.messageService.clear();
     this.messageService.add('Animal is not available at this Id');
   }
 }
