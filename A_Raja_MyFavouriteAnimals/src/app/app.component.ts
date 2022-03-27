@@ -18,8 +18,8 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  functionCall(id:any) {
-    this.AnimalService.getOneContent(id).subscribe((getContent: any) => this.getOneAnimal = getContent);
-  }
+  // functionCall(id:any) {
+  //   // this.AnimalService.getOneContent(id).subscribe((getContent: any) => this.getOneAnimal = getContent);
+  // }
 
 }

@@ -16,24 +16,25 @@ export class ContentListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.AnimalService.getContentObs().subscribe(animalsArray => this.arrayOfAnimals = animalsArray);
+    this.getAnimalFromServer();
   }
 
-  text?:string;
+  addAnimalToList(newAnimalFromChild: Animals): void {
+    this.AnimalService.addContent(newAnimalFromChild).subscribe(newContentFromServer => {
+      console.log("New content from server: ", newContentFromServer);
+      this.arrayOfAnimals.push(newContentFromServer);
+      this.arrayOfAnimals = [...this.arrayOfAnimals];
+    });
+  }
 
-  searchAnimalName(animalName:string):any {
-    
-    for(let i = 0; i < this.arrayOfAnimals.length; i++) 
-    {
-      if (animalName.toLocaleLowerCase() == this.arrayOfAnimals[i].title.toLocaleLowerCase()) {
-        this.text = 'Animal exist in the list !';
-        console.log('exist');
-        return [this.text];
-      } 
-      else  {
-        this.text = 'Animal does not exist in the list !';
-        console.log('Does not exist');
-      }      
-    }
+  updateAnimalInList(contentItem: Animals): void {  
+    this.AnimalService.updateContent(contentItem).subscribe(() => {
+      console.log("Content updated successfully");
+      this.getAnimalFromServer();
+    });
+  }
+
+  getAnimalFromServer(): void{
+    this.AnimalService.getContent().subscribe(animalArray => this.arrayOfAnimals = animalArray);
   }
 }
