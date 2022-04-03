@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "schematics-scss-migrate": "^1.3.14"
+  }
+}

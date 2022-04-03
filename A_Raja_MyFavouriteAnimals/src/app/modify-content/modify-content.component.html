@@ -1,29 +1,6 @@
 <h1>Add new Animal in the List</h1>
 <div>
-    Id (For Updating Only): <input #id>
-</div><br>
-<div>
-    Title* : <input #title>
-</div><br>
-<div>
-    Description* : <input #description>
-</div><br>
-<div>
-    Creator* : <input #creator>
-</div><br>
-<div>
-    Image URL* : <input #imgURL>
-</div><br>
-<div>
-    Type : <input #type>
-</div><br>
-<div>
-    Tags (Seperated by comma [,]) : <input #tags>
-</div><br>
-<div>
-    <!-- <button (click)="addAnimal(title.value, description.value, creator.value,imgURL.value, type.value, tags.value); updateAnimal(id.value, title.value, description.value, creator.value, imgURL.value, type.value, tags.value)" id="button">{{ (!id.value ? 'Add Animal' : 'Update Animal') }}</button> -->
-    <button (click)="addAnimal(title.value, description.value, creator.value,imgURL.value, type.value, tags.value)" id="button">Add Animal</button>
-    <button (click)="updateAnimal(id.value, title.value, description.value, creator.value, imgURL.value, type.value, tags.value)" id="button">Update Animal</button>
-</div><br>
-<!-- <p class="flag">{{ message }}</p> -->
-<app-app-messages class="message"></app-app-messages> 
+    <button mat-raised-button color="primary" (click)="openDialog()">Add new Content</button>
+</div>
+
+<!-- <app-app-messages class="message"></app-app-messages>  -->

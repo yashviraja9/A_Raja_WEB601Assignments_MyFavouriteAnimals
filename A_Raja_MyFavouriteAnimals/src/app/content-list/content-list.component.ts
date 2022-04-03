@@ -1,6 +1,10 @@
 import { Component,Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Animals } from '../helper-files/content-interface';
+import { ModifyContentComponent } from '../modify-content/modify-content.component';
 import { AnimalService } from '../services/animal.service';
+import { MessageService } from '../services/message.service';
+import {MatDividerModule} from '@angular/material/divider';
 
 @Component({
   selector: 'app-content-list',
@@ -27,12 +31,12 @@ export class ContentListComponent implements OnInit {
     });
   }
 
-  updateAnimalInList(contentItem: Animals): void {  
-    this.AnimalService.updateContent(contentItem).subscribe(() => {
-      console.log("Content updated successfully");
-      this.getAnimalFromServer();
-    });
-  }
+  // updateAnimalInList(contentItem: Animals): void {  
+  //   this.AnimalService.updateContent(contentItem).subscribe(() => {
+  //     console.log("Content updated successfully");
+  //     this.getAnimalFromServer();
+  //   });
+  // }
 
   getAnimalFromServer(): void{
     this.AnimalService.getContent().subscribe(animalArray => this.arrayOfAnimals = animalArray);

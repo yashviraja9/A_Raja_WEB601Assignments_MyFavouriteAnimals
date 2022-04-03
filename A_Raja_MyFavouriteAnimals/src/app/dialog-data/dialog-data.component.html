@@ -1,0 +1,35 @@
+<mat-dialog-content class="mat-typography">
+    <h1 mat-dialog-title>Add Animal</h1>
+    <mat-form-field>
+        <mat-label>ID (Only For Updating))</mat-label>
+        <input matInput placeholder="0" #id disabled>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="Animal Name" #title>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Description" #description></textarea>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Creator</mat-label>
+        <input matInput placeholder="Creator" #creator>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Image URL</mat-label>
+        <input matInput placeholder="" #imgURL>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Type</mat-label>
+        <input matInput placeholder="Type" #type>
+    </mat-form-field><br>
+    <mat-form-field>
+        <mat-label>Tags (Seperated by comma [,])</mat-label>
+        <input matInput placeholder="Tags (Seperated by comma [,])" #tags>
+    </mat-form-field><br>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" (click)="addAnimal(title.value, description.value, creator.value, imgURL.value, type.value, tags.value)">Add Animal</button>
+    <button mat-button mat-dialog-close color="accent">Cancel</button>
+</mat-dialog-actions>
