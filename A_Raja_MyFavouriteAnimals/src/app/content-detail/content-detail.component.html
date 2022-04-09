@@ -1,0 +1,22 @@
+<h1>Animal Detail</h1>
+<div *ngIf="animals" class="animal-{{animals?.id}}">
+    <mat-card class="example-card">
+        <mat-card-title>Title: {{ animals?.title }}</mat-card-title><br>
+        <mat-card-subtitle>ID: {{ animals?.id }}</mat-card-subtitle>
+        <mat-card-content>{{ animals?.description }}</mat-card-content>
+        <mat-card-content>{{ animals?.creator }}</mat-card-content>
+        <mat-card-content *ngIf=" animals?.type " appHoverAffect eVal="type">{{ animals?.type }}</mat-card-content>
+        <mat-card-content class="tags" *ngIf="animals?.tags">
+            <mat-card-content appHoverAffect class="tag" *ngFor="let tag of animals?.tags"> #{{ tag }}</mat-card-content>
+        </mat-card-content>
+        <mat-card-content [ngSwitch] = 'animals?.imgURL'>
+            <mat-card-content *ngSwitchCase="null"><img mat-card-image class="img" src="https://m.media-amazon.com/images/I/71Qb6yqg1ML._AC_SX679_.jpg"></mat-card-content>
+            <mat-card-content *ngSwitchDefault><img mat-card-image class="img" *ngIf="animals?.imgURL"  [src]='animals?.imgURL'></mat-card-content>
+        </mat-card-content>
+    </mat-card>
+    <app-app-messages class="message"></app-app-messages>
+    <a routerLink="/list" routerLinkActive="active" (click)="clear()">Go back to the list</a>
+</div>
+<div *ngIf="!animals">
+    No animal item at that id exists. <a routerLink="/list">Go back to the list</a>
+  </div>

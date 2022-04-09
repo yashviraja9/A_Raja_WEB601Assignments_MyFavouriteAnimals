@@ -18,6 +18,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import { DialogDataComponent } from './dialog-data/dialog-data.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,10 @@ import { DialogDataComponent } from './dialog-data/dialog-data.component';
     HoverAffectDirective,
     AppMessagesComponent,
     ModifyContentComponent,
-    DialogDataComponent
+    DialogDataComponent,
+    ContentDetailComponent,
+    PageNotFoundComponent,
+    HomeComponent
   ],
   entryComponents: [DialogDataComponent],
   imports: [
@@ -45,7 +52,8 @@ import { DialogDataComponent } from './dialog-data/dialog-data.component';
     MatInputModule,
     MatDialogModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

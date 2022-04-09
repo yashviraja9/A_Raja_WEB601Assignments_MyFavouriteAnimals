@@ -13,11 +13,11 @@
     </div><br>
 </div> -->
 
-<div *ngIf="animals">
+<div *ngIf="animals" class="animal-{{animals?.id}}">
     <mat-card class="example-card">
         <mat-card-title>{{ animals?.title }}</mat-card-title><br>
         <mat-card-subtitle>{{ animals?.id }}</mat-card-subtitle>
-        <mat-card-content>{{ animals?.description }}</mat-card-content>
+        <!-- <mat-card-content>{{ animals?.description }}</mat-card-content> -->
         <mat-card-content>{{ animals?.creator }}</mat-card-content>
         <mat-card-content *ngIf=" animals?.type " appHoverAffect eVal="type">{{ animals?.type }}</mat-card-content>
         <mat-card-content class="tags" *ngIf="animals?.tags">
@@ -27,5 +27,8 @@
             <mat-card-content *ngSwitchCase="null"><img mat-card-image class="img" src="https://m.media-amazon.com/images/I/71Qb6yqg1ML._AC_SX679_.jpg"></mat-card-content>
             <mat-card-content *ngSwitchDefault><img mat-card-image class="img" *ngIf="animals?.imgURL"  [src]='animals?.imgURL'></mat-card-content>
         </mat-card-content>
+        <a [routerLink]="['/content', animals?.id ?? 0]" routerLinkActive="active">
+            Animal Detail
+        </a>
     </mat-card>
 </div>

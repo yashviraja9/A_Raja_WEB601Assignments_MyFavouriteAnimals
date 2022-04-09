@@ -4,13 +4,11 @@ import { Animals } from '../helper-files/content-interface';
 import { ARRAYOFANIMALS } from '../helper-files/contentDb';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnimalService {
-  // id: any;
 
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-type': 'application/json' })
@@ -21,6 +19,13 @@ export class AnimalService {
   getContent(): Observable<Animals[]> { 
     console.log("Getting the list");
     return this.http.get<Animals[]>("api/animals");
+  }
+
+  getContentItem(id: number): Observable<Animals> { 
+    console.log("Retrieving OBSERVABLE content item");
+    // this.messageService.clear();
+    // this.messageService.add('Animal at ID : ' + (id) + ' retrieved Successfully..!');
+    return this.http.get<Animals>("api/animals/" + id);
   }
 
   addContent(newContentItem: Animals): Observable<Animals>{

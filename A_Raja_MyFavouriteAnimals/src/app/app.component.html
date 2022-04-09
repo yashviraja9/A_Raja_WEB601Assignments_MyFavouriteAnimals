@@ -1,1 +1,20 @@
-<app-content-list></app-content-list>
+<div class="side-nav">
+    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+        Home Page
+    </a><br />
+    <a routerLink="list" routerLinkActive="active">
+        Animals List
+    </a><br />
+    <div class="side-nav-child">
+        <a routerLink="content/42" routerLinkActive="active">
+            Animal Detail
+        </a><br />
+    </div>
+    <a routerLink="pagewillnotbefound" routerLinkActive="active">
+        Invalid page link
+    </a>
+</div>
+<!-- <app-app-messages class="message"></app-app-messages> -->
+<div id="content-wrapper">
+    <router-outlet></router-outlet>
+</div>
