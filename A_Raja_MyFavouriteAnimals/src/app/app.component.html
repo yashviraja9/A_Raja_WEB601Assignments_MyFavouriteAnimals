@@ -12,9 +12,13 @@
     </div>
     <a routerLink="pagewillnotbefound" routerLinkActive="active">
         Invalid page link
-    </a>
+    </a><br>
 </div>
-<!-- <app-app-messages class="message"></app-app-messages> -->
+
 <div id="content-wrapper">
-    <router-outlet></router-outlet>
+    <router-outlet>
+        <button mat-raised-button color="primary"  style="align-items: center;">
+            Check for Update
+        </button>
+    </router-outlet>
 </div>
