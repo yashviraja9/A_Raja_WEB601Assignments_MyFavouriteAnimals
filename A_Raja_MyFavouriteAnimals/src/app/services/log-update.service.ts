@@ -17,16 +17,12 @@ export class LogUpdateService {
           ${event.version.hash}`);
         break;
         case 'VERSION_READY':
-          console.log(`Current app version:
-          ${event.currentVersion.hash}`);
-          console.log(`New app version ready for use:
-          ${event.latestVersion.hash}`);
-          let snack= this._snackBar.open('Update Available', 'Install Now!');
+          console.log(`Current app version: ${event.currentVersion.hash}`);
+          console.log(`New app version ready for use: ${event.latestVersion.hash}`);
+          let snack = this._snackBar.open('Update Available', 'Install Now!');
           snack.onAction().subscribe(() => {
-            window.location.reload();
+            this.updates.activateUpdate().then(() => document.location.reload());
           });
-          this.updates.checkForUpdate().then(() => console.log('Checked!'));
-          this.updates.versionUpdates.subscribe(() => this._snackBar.open('Update Available', 'Install Now!'));
         break;
       } 
     });
